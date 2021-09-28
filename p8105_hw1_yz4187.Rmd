@@ -44,6 +44,8 @@ data("penguins", package = "palmerpenguins")
 names(penguins)
 nrow(penguins)
 ncol(penguins)
+mean(pull(penguins, name = "flipper_length_mm"))
+
 
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 
