@@ -6,7 +6,7 @@ output: github_document
     
 ---
 
-```{r, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
 ```
 
@@ -35,5 +35,20 @@ mean(pull(learning_df, var = 4))
 as.numeric(levels(learning_df))
 ```
 * According to the as.numeric function, we can see that the mean for colume "vec_char" and "vec_fator" are "N/A" since they are not numbers. The as.numeric function helps to show which colume is not able to transfer to numeric. Since these two columes are not numbers, we can not get the means.
+
+
+### Problem 2
+```{r, warning=FALSE}
+data("penguins", package = "palmerpenguins")
+
+names(penguins)
+nrow(penguins)
+ncol(penguins)
+
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+ggsave("results/scatter_plot.pdf")
+```
+
 
 
